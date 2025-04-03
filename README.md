@@ -32,3 +32,7 @@ For other variations of the model and data configurations use please see set the
 ## Classification Model
 ### Training
 ### Evaluation
+
+## Acknowledgements
+The image translation model we implemented our method on is ```UVCGAN2```
+* [UVCGAN v2: An Improved Cycle-Consistent GAN for Unpaired Image-to-Image Translation](https://github.com/LS4GAN/uvcgan2)
