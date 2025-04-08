@@ -26,6 +26,9 @@ For other variations of the model and data configurations use please see set the
 --lambda-fwd (float) # class prediction weight
 ```
 ### Evaluation
+To evaluate the quality of the generated images, we can use the functions in ./classification/eval_quality.py
+
+
 ### Generation
 #### Interpolation 
 
