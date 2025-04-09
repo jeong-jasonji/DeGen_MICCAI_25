@@ -25,12 +25,24 @@ For other variations of the model and data configurations use please see set the
 --img_ch (int) [1, 3] # input image channels
 --lambda-fwd (float) # class prediction weight
 ```
+
+### Translation and interpolation
+To translate the images, run the command:
+```python3 translate_decision.py --dataset DATASET --split SPLIT --translate TR_MODE --range ''```
+Options:
+```
+--split SPLIT: [train, val, test]
+- SPLIT will translate using the data from the split
+--translate TR_MODE: [full, interpolate]
+- 'full' will fully translate the images from one domain to the other
+- 'interpolate' will interpolate the images
+-- range RANGE: ['-1.0,0.0']
+- RANGE should be in a string format with the minimum and maximum value of interpolation separated by a comma
+```
+
 ### Evaluation
 To evaluate the quality of the generated images, we can use the functions in ./classification/eval_quality.py
 
-
-### Generation
-#### Interpolation 
 
 ## Classification Model
 ### Training
