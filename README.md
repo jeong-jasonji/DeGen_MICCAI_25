@@ -77,7 +77,24 @@ Once the images have been generated, there will be an "evals" folder in the chec
 ```
 ### Evaluation
 To evaluate the quality of the generated images, we can use the following script:
-```python3 eval_quality.py```
+```python3 eval_quality.py --device DEV --eval_df_dir DIR --n_compare N --desc DESC```
+Options:
+```
+--device DEV: [cuda:0, cuda:N, cpu]
+DEV be the device to use to evaluate the images on
+
+----eval_df_dir DIR(str)
+DIR is the directory where there are two dataframes of images to evaluate against in the following structure:
+├── DIR
+│   ├── compare_a.csv
+│   ├── compare_b.csv
+
+--n_compare N(int)
+N is the number of random samples from each dataframe to compare
+
+--desc DESC(str)
+DESC optional description to have in progress bar
+```
 
 ## Acknowledgements
 The image translation model we implemented our method on is ```UVCGAN2```
