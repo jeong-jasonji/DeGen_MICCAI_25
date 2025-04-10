@@ -1,4 +1,4 @@
-# DeGen: Decision boundary generation through latent style manipulation (MICCAI 25)
+# DeGen: Decision boundary generation through latent style manipulation
 This repository contains the source code of the paper *DeGen: Decision boundary generation through latent style manipulation*
 
 ## Preparation
