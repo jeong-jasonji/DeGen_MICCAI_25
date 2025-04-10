@@ -32,17 +32,33 @@ To translate the images, run the command:
 Options:
 ```
 --split SPLIT: [train, val, test]
-- SPLIT will translate using the data from the split
+SPLIT will translate using the data from the split
+
 --translate TR_MODE: [full, interpolate]
-- 'full' will fully translate the images from one domain to the other
-- 'interpolate' will interpolate the images
+'full' will fully translate the images from one domain to the other
+'interpolate' will interpolate the images
+
 -- range RANGE: ['-1.0,0.0']
-- RANGE should be in a string format with the minimum and maximum value of interpolation separated by a comma
+RANGE should be in a string format with either the interpolation value or minimum and maximum value of interpolation separated by a comma
+
+-- sets SETS: [''real_a,real_b,fake_a,fake_b']
+SETS should be a string of the output sets to generate separated by commas.
 ```
-
+Once the images have been generated, there will be an "evals" folder in the checkpoint directory with a structure like the following:
+```
+├── evals
+│   ├── final
+│   │   ├── images_eval-SPLIT
+│   │   │   ├── real_a # real domain A
+│   │   │   ├── real_b # real domain B
+│   │   │   ├── fake_a # translated domain A
+│   │   │   ├── fake_b # translated domain B
+│   │   │   ├── reco_a # reconstructed A (A->B->A)
+│   │   │   ├── reco_b # reconstructed B (B->A->B)
+```
 ### Evaluation
-To evaluate the quality of the generated images, we can use the functions in ./classification/eval_quality.py
-
+To evaluate the quality of the generated images, we can use the functions in eval_quality.py
+```python3 eval_datasets ```
 
 ## Classification Model
 ### Training
