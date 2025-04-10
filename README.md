@@ -57,12 +57,10 @@ Once the images have been generated, there will be an "evals" folder in the chec
 │   │   │   ├── reco_b # reconstructed B (B->A->B)
 ```
 ### Evaluation
-To evaluate the quality of the generated images, we can use the functions in eval_quality.py
-```python3 eval_datasets ```
+To evaluate the quality of the generated images, we can use the following script:
+```python3 eval_quality.py```
 
 ## Classification Model
-### Training
-### Evaluation
 
 ## Acknowledgements
 The image translation model we implemented our method on is ```UVCGAN2```
