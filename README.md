@@ -1,6 +1,25 @@
 # DeGen: Decision boundary generation through latent style manipulation
 This repository contains the source code of the paper *DeGen: Decision boundary generation through latent style manipulation*
 
+The main contribution of this work is to perturb the latent vector in a novel way to generate image translations near the learned decision boundary:
+![generation and decision boundary](/figures/generation_and_boundary.png)
+
+This is achieved in two training steps (backbone and style training) and one inference step:
+* The backbone is based off of [UVCGAN2](https://github.com/LS4GAN/uvcgan2) and trained in the same way.
+* The auxiliary style classifier is trained from the bottleneck features of UVCGAN2 (mod_ft).
+![Backbone training step](/figures/model_training_step_generic.png)
+![Auxiliary Style training step](/figures/style_training_step_generic.png)
+* The inference is achieved by perturbing the image translation with a decided interpolation step.
+![DeGen Inference Step](/figures/model_inference_step_generic.png)
+
+Example of adding/removing makeup in from the Large-scale CelebFaces Attributes (CelebA) Dataset.
+![CelebA Makeup Translation](/figures/celeba_translations.png)
+Example of adding/removing breast density in the RSNA Screening Mammography Breast Cancer Detection AI Challenge Dataset.
+![Breast Density Translation](/figures/breast_translations.png)
+Example of adding/removing hemorrhages in the RSNA Intracranial Hemorrhage Detection Challenge Dataset.
+![HeadCT Hemorrhage Translation](/figures/headct_translations.png)
+
+
 ## Preparation
 ### Installing the Environment
 To install the environment simply run the following command:
@@ -60,8 +79,11 @@ Once the images have been generated, there will be an "evals" folder in the chec
 To evaluate the quality of the generated images, we can use the following script:
 ```python3 eval_quality.py```
 
-## Classification Model
-
 ## Acknowledgements
 The image translation model we implemented our method on is ```UVCGAN2```
 * [UVCGAN v2: An Improved Cycle-Consistent GAN for Unpaired Image-to-Image Translation](https://github.com/LS4GAN/uvcgan2)
+
+Datasets used were:
+* [Large-scale CelebFaces Attributes (CelebA) Dataset](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+* [RSNA Screening Mammography Breast Cancer Detection AI Challenge](https://www.rsna.org/rsnai/ai-image-challenge/screening-mammography-breast-cancer-detection-ai-challenge)
+* [RSNA Intracranial Hemorrhage Detection Challenge](https://www.rsna.org/rsnai/ai-image-challenge/rsna-intracranial-hemorrhage-detection-challenge-2019)
