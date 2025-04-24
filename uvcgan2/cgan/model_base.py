@@ -129,19 +129,19 @@ class ModelBase:
         self.dataset = dataset
         if dataset == 'breast':
             try:
-                self.auxiliary = torch.load('/media/Datacenter_storage/jason_notebooks/decisionGAN/uvcgan2/latent_disc_models/disc_l_multi_e200.pth', map_location=self.images.real_a.device)
+                self.auxiliary = torch.load('./latent_disc_models/disc_l_multi_e200.pth', map_location=self.images.real_a.device)
             except:
-                self.auxiliary = torch.load('/media/Datacenter_storage/jason_notebooks/decisionGAN/uvcgan2/latent_disc_models/disc_l_multi_e200.pth', map_location=self.images.real_b.device)
+                self.auxiliary = torch.load('./latent_disc_models/disc_l_multi_e200.pth', map_location=self.images.real_b.device)
         elif dataset == 'celeba':
             try:
-                self.auxiliary = torch.load('/media/Datacenter_storage/jason_notebooks/decisionGAN/uvcgan2/latent_disc_models/celeba_disc_l_e1.pth', map_location=self.images.real_a.device)
+                self.auxiliary = torch.load('./latent_disc_models/celeba_disc_l_e1.pth', map_location=self.images.real_a.device)
             except:
-                self.auxiliary = torch.load('/media/Datacenter_storage/jason_notebooks/decisionGAN/uvcgan2/latent_disc_models/celeba_disc_l_e1.pth', map_location=self.images.real_b.device)
+                self.auxiliary = torch.load('./latent_disc_models/celeba_disc_l_e1.pth', map_location=self.images.real_b.device)
         elif dataset == 'headct':
             try:
-                self.auxiliary = torch.load('/media/Datacenter_storage/jason_notebooks/decisionGAN/uvcgan2/latent_disc_models/headct_disc_l_e1.pth', map_location=self.images.real_a.device)
+                self.auxiliary = torch.load('./latent_disc_models/headct_disc_l_e1.pth', map_location=self.images.real_a.device)
             except:
-                self.auxiliary = torch.load('/media/Datacenter_storage/jason_notebooks/decisionGAN/uvcgan2/latent_disc_models/headct_disc_l_e1.pth', map_location=self.images.real_b.device)
+                self.auxiliary = torch.load('./latent_disc_models/headct_disc_l_e1.pth', map_location=self.images.real_b.device)
         self.forward()
 
     def find_last_checkpoint_epoch(self):
