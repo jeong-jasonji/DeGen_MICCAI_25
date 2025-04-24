@@ -320,7 +320,7 @@ class ModNetBlock(nn.Module):
             - strong style: ? keep?
         """
         # get the average style of the dataset
-        style_dir = '/media/Datacenter_storage/jason_notebooks/decisionGAN/uvcgan2/features/'
+        style_dir = './features/'
         if dataset == 'breast':
             avg_style = np.load(os.path.join(style_dir, 'good_ab_b_avg.npy' if label == 1 else 'good_ba_c_avg.npy'))
         elif dataset == 'celeba':
